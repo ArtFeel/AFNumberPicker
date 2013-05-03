@@ -11,6 +11,8 @@
 
 @interface AFNumberPickerComponent : UIView
 
+@property (nonatomic, assign) NSInteger currentValue;
+
 - (id)initWithFrame:(CGRect)frame andNumber:(NSInteger)number;
 
 @end

@@ -26,7 +26,7 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
 
     if ( !self.testComponent ) {
-        self.testComponent = [[AFNumberPickerComponent alloc] initWithFrame:CGRectMake(20, 20, 50, 65) andNumber:4];
+        self.testComponent = [[AFNumberPickerComponent alloc] initWithFrame:CGRectMake(20, 20, 100, 130) andNumber:4];
         [self.view addSubview:self.testComponent];
     }
 }

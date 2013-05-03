@@ -17,6 +17,12 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 @property (nonatomic, strong) UITableView * tableView;
 
+- (NSInteger)moduloFromNumber:(NSInteger)number;
+- (NSInteger)centeredIndexFromNumber:(NSInteger)number;
+
+- (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)snapPosition;
+
 @end
 
 
@@ -27,10 +33,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.tableView];
-
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:number inSection:0]
-                                    animated:NO
-                              scrollPosition:UITableViewScrollPositionMiddle];
+        [self scrollToIndex:[self centeredIndexFromNumber:number] animated:NO];
     }
     return self;
 }
@@ -53,7 +56,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 }
 
 
-#pragma mark - UITableView DataSource
+#pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return kMaxNumberOfRows;
@@ -75,7 +78,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 }
 
 
-#pragma mark - UITableView Delegate
+#pragma mark - UITableViewDelegate methods
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return self.frame.size.height;
@@ -84,6 +87,63 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+}
+
+
+#pragma mark - UIScrollViewDelegate methods
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if ( !decelerate ) {
+        [self snapPosition];
+    }
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self snapPosition];
+}
+
+
+//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+//    [self snapPosition];
+//}
+
+
+#pragma mark - Private methods
+
+- (NSInteger)moduloFromNumber:(NSInteger)number {
+    return number % 10;
+}
+
+
+- (NSInteger)centeredIndexFromNumber:(NSInteger)number {
+    NSInteger halfOfRange = kMaxNumberOfRows / 2;
+    NSInteger centeredZero = halfOfRange - [self moduloFromNumber:halfOfRange];
+    return centeredZero + number;
+}
+
+
+#pragma mark - Scrolling helpers
+
+- (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated {
+    NSIndexPath * indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
+}
+
+
+- (void)snapPosition {
+    NSArray * visibleCells = [self.tableView visibleCells];
+
+    CGRect visibleTableFrame = self.tableView.bounds;
+    visibleTableFrame.origin.y = self.tableView.contentOffset.y;
+
+    for (UITableViewCell * cell in visibleCells) {
+        if ( CGRectContainsPoint(visibleTableFrame, cell.center) ) {
+            NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+            [self scrollToIndex:indexPath.row animated:YES];
+            break;
+        }
+    }
 }
 
 @end
