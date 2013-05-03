@@ -3,7 +3,7 @@
 //  AFNumberPicker
 //
 //  Created by Philip Vasilchenko on 03.05.13.
-//  Copyright (c) 2013 ArtFeel. All rights reserved.
+//  Copyright (c) 2013 CoreInvader. All rights reserved.
 //
 
 #import "AFAppDelegate.h"

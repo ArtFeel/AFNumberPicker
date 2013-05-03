@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		378180C84D06F66CDF713059 /* AFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37818246400089FAA46DE949 /* AFAppDelegate.m */; };
+		378186251B5D98575DE54A12 /* AFNumberPickerComponentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */; };
+		378187ACB6FFA71E0F99917B /* AFNumberPickerComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */; };
 		378187B9650579CCF9ED3248 /* AFNumberPickerExapmleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37818EBC3329AFE3495BA273 /* AFNumberPickerExapmleViewController.m */; };
+		37818DDDCFEF9C3EB26DC1AB /* AFNumberPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */; };
 		66220A0A1734226A007DA41A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A091734226A007DA41A /* UIKit.framework */; };
 		66220A0C1734226A007DA41A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A0B1734226A007DA41A /* Foundation.framework */; };
 		66220A0E1734226A007DA41A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A0D1734226A007DA41A /* CoreGraphics.framework */; };
@@ -20,7 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerComponentCell.m; sourceTree = "<group>"; };
+		378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerComponent.m; sourceTree = "<group>"; };
+		378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerComponent.h; sourceTree = "<group>"; };
 		37818246400089FAA46DE949 /* AFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDelegate.m; sourceTree = "<group>"; };
+		378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerComponentCell.h; sourceTree = "<group>"; };
+		378182A78134C28BECA5B307 /* AFNumberPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPicker.h; sourceTree = "<group>"; };
+		3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPicker.m; sourceTree = "<group>"; };
 		37818A5B596DC0907BA5D423 /* AFNumberPickerExapmleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerExapmleViewController.h; sourceTree = "<group>"; };
 		37818AE6ADBF8E4E9284ED99 /* AFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDelegate.h; sourceTree = "<group>"; };
 		37818EBC3329AFE3495BA273 /* AFNumberPickerExapmleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerExapmleViewController.m; sourceTree = "<group>"; };
@@ -54,6 +63,12 @@
 		3781855EE161D22EDF45FC5A /* AFNumberPicker */ = {
 			isa = PBXGroup;
 			children = (
+				3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */,
+				378182A78134C28BECA5B307 /* AFNumberPicker.h */,
+				378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */,
+				378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */,
+				3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */,
+				378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */,
 			);
 			path = AFNumberPicker;
 			sourceTree = "<group>";
@@ -205,6 +220,9 @@
 				66220A161734226A007DA41A /* main.m in Sources */,
 				378180C84D06F66CDF713059 /* AFAppDelegate.m in Sources */,
 				378187B9650579CCF9ED3248 /* AFNumberPickerExapmleViewController.m in Sources */,
+				37818DDDCFEF9C3EB26DC1AB /* AFNumberPicker.m in Sources */,
+				378187ACB6FFA71E0F99917B /* AFNumberPickerComponent.m in Sources */,
+				378186251B5D98575DE54A12 /* AFNumberPickerComponentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
