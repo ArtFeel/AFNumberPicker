@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66220A0A1734226A007DA41A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A091734226A007DA41A /* UIKit.framework */; };
+		66220A0C1734226A007DA41A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A0B1734226A007DA41A /* Foundation.framework */; };
+		66220A0E1734226A007DA41A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66220A0D1734226A007DA41A /* CoreGraphics.framework */; };
+		66220A141734226A007DA41A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66220A121734226A007DA41A /* InfoPlist.strings */; };
+		66220A161734226A007DA41A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66220A151734226A007DA41A /* main.m */; };
+		66220A1A1734226A007DA41A /* AFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66220A191734226A007DA41A /* AFAppDelegate.m */; };
+		66220A1C1734226A007DA41A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1B1734226A007DA41A /* Default.png */; };
+		66220A1E1734226A007DA41A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1D1734226A007DA41A /* Default@2x.png */; };
+		66220A201734226A007DA41A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1F1734226A007DA41A /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		66220A061734226A007DA41A /* AFNumberPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFNumberPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66220A091734226A007DA41A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		66220A0B1734226A007DA41A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		66220A0D1734226A007DA41A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		66220A111734226A007DA41A /* AFNumberPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AFNumberPicker-Info.plist"; sourceTree = "<group>"; };
+		66220A131734226A007DA41A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		66220A151734226A007DA41A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66220A171734226A007DA41A /* AFNumberPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFNumberPicker-Prefix.pch"; sourceTree = "<group>"; };
+		66220A181734226A007DA41A /* AFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFAppDelegate.h; sourceTree = "<group>"; };
+		66220A191734226A007DA41A /* AFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFAppDelegate.m; sourceTree = "<group>"; };
+		66220A1B1734226A007DA41A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		66220A1D1734226A007DA41A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		66220A1F1734226A007DA41A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66220A031734226A007DA41A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66220A0A1734226A007DA41A /* UIKit.framework in Frameworks */,
+				66220A0C1734226A007DA41A /* Foundation.framework in Frameworks */,
+				66220A0E1734226A007DA41A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		662209FD17342269007DA41A = {
+			isa = PBXGroup;
+			children = (
+				66220A0F1734226A007DA41A /* AFNumberPicker */,
+				66220A081734226A007DA41A /* Frameworks */,
+				66220A071734226A007DA41A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66220A071734226A007DA41A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66220A061734226A007DA41A /* AFNumberPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66220A081734226A007DA41A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66220A091734226A007DA41A /* UIKit.framework */,
+				66220A0B1734226A007DA41A /* Foundation.framework */,
+				66220A0D1734226A007DA41A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66220A0F1734226A007DA41A /* AFNumberPicker */ = {
+			isa = PBXGroup;
+			children = (
+				66220A181734226A007DA41A /* AFAppDelegate.h */,
+				66220A191734226A007DA41A /* AFAppDelegate.m */,
+				66220A101734226A007DA41A /* Supporting Files */,
+			);
+			path = AFNumberPicker;
+			sourceTree = "<group>";
+		};
+		66220A101734226A007DA41A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66220A111734226A007DA41A /* AFNumberPicker-Info.plist */,
+				66220A121734226A007DA41A /* InfoPlist.strings */,
+				66220A151734226A007DA41A /* main.m */,
+				66220A171734226A007DA41A /* AFNumberPicker-Prefix.pch */,
+				66220A1B1734226A007DA41A /* Default.png */,
+				66220A1D1734226A007DA41A /* Default@2x.png */,
+				66220A1F1734226A007DA41A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66220A051734226A007DA41A /* AFNumberPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66220A231734226A007DA41A /* Build configuration list for PBXNativeTarget "AFNumberPicker" */;
+			buildPhases = (
+				66220A021734226A007DA41A /* Sources */,
+				66220A031734226A007DA41A /* Frameworks */,
+				66220A041734226A007DA41A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNumberPicker;
+			productName = AFNumberPicker;
+			productReference = 66220A061734226A007DA41A /* AFNumberPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		662209FE1734226A007DA41A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AF;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = ArtFeel;
+			};
+			buildConfigurationList = 66220A011734226A007DA41A /* Build configuration list for PBXProject "AFNumberPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 662209FD17342269007DA41A;
+			productRefGroup = 66220A071734226A007DA41A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66220A051734226A007DA41A /* AFNumberPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66220A041734226A007DA41A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66220A141734226A007DA41A /* InfoPlist.strings in Resources */,
+				66220A1C1734226A007DA41A /* Default.png in Resources */,
+				66220A1E1734226A007DA41A /* Default@2x.png in Resources */,
+				66220A201734226A007DA41A /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66220A021734226A007DA41A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66220A161734226A007DA41A /* main.m in Sources */,
+				66220A1A1734226A007DA41A /* AFAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66220A121734226A007DA41A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66220A131734226A007DA41A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66220A211734226A007DA41A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		66220A221734226A007DA41A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66220A241734226A007DA41A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AFNumberPicker/AFNumberPicker-Prefix.pch";
+				INFOPLIST_FILE = "AFNumberPicker/AFNumberPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		66220A251734226A007DA41A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AFNumberPicker/AFNumberPicker-Prefix.pch";
+				INFOPLIST_FILE = "AFNumberPicker/AFNumberPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66220A011734226A007DA41A /* Build configuration list for PBXProject "AFNumberPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66220A211734226A007DA41A /* Debug */,
+				66220A221734226A007DA41A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66220A231734226A007DA41A /* Build configuration list for PBXNativeTarget "AFNumberPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66220A241734226A007DA41A /* Debug */,
+				66220A251734226A007DA41A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 662209FE1734226A007DA41A /* Project object */;
+}
