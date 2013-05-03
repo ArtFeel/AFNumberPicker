@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AFNumberPickerExapmleViewController : UIViewController
+@interface AFNumberPickerExampleViewController : UIViewController
 
 @end

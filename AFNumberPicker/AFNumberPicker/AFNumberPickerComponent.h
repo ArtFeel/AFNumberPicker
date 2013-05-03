@@ -11,4 +11,6 @@
 
 @interface AFNumberPickerComponent : UIView
 
+- (id)initWithFrame:(CGRect)frame andNumber:(NSInteger)number;
+
 @end

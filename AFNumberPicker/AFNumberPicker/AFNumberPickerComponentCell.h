@@ -11,4 +11,6 @@
 
 @interface AFNumberPickerComponentCell : UITableViewCell
 
++ (NSString *)identifier;
+
 @end

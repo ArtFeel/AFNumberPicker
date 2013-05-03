@@ -11,4 +11,11 @@
 
 @implementation AFNumberPickerComponentCell
 
+
+#pragma mark - Class methods
+
++ (NSString *)identifier {
+    return NSStringFromClass([self class]);
+}
+
 @end
