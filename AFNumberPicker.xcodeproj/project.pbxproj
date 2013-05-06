@@ -32,6 +32,7 @@
 		3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPicker.m; sourceTree = "<group>"; };
 		37818A5B596DC0907BA5D423 /* AFNumberPickerExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerExampleViewController.h; sourceTree = "<group>"; };
 		37818AE6ADBF8E4E9284ED99 /* AFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDelegate.h; sourceTree = "<group>"; };
+		37818C3314DD3BF9D8EE94C4 /* AFNumberPickerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerProtocol.h; sourceTree = "<group>"; };
 		37818EBC3329AFE3495BA273 /* AFNumberPickerExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerExampleViewController.m; sourceTree = "<group>"; };
 		66220A061734226A007DA41A /* AFNumberPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFNumberPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66220A091734226A007DA41A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +70,7 @@
 				378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */,
 				3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */,
 				378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */,
+				37818C3314DD3BF9D8EE94C4 /* AFNumberPickerProtocol.h */,
 			);
 			path = AFNumberPicker;
 			sourceTree = "<group>";

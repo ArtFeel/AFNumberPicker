@@ -80,11 +80,6 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 #pragma mark - UITableViewDelegate methods
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return self.frame.size.height;
-//}
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 }
@@ -102,11 +97,6 @@ static const NSInteger kMaxNumberOfRows = 4096;
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self snapPosition];
 }
-
-
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-//    [self snapPosition];
-//}
 
 
 #pragma mark - Private methods
