@@ -29,6 +29,11 @@ static const NSInteger kMaxNumberOfRows = 4096;
 @implementation AFNumberPickerComponent
 
 
+- (id)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame andNumber:0];
+}
+
+
 - (id)initWithFrame:(CGRect)frame andNumber:(NSInteger)number {
     self = [super initWithFrame:frame];
     if (self) {
@@ -43,9 +48,9 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 - (UITableView *)tableView {
     if ( !_tableView ) {
-        _tableView = [[UITableView alloc] initWithFrame:self.frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.rowHeight = self.frame.size.height;
+        _tableView.rowHeight = CGRectGetHeight(self.frame);
         _tableView.backgroundColor = [UIColor grayColor];
         _tableView.showsHorizontalScrollIndicator = NO;
         _tableView.showsVerticalScrollIndicator = NO;
@@ -69,7 +74,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
     if ( !cell ) {
         cell = [[AFNumberPickerComponentCell alloc] initWithFrame:self.frame];
-        cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row % 10];
+        cell.textLabel.text = [NSString stringWithFormat:@"%d", [self moduloFromNumber:indexPath.row]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
     }

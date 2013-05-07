@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNumberPickerProtocol.h"
 
 
-@interface AFNumberPicker : UIControl
+@interface AFNumberPicker : UIView
+
+@property (nonatomic, assign) id<AFNumberPickerDataSource> dataSource;
+@property (nonatomic, assign) id<AFNumberPickerDelegate> delegate;
 
 @end
