@@ -121,7 +121,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 #pragma mark - Scrolling helpers
 
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated {
-    NSIndexPath * indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
 }
 
