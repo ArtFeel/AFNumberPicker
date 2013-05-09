@@ -8,6 +8,7 @@
 
 #import "AFNumberPickerComponent.h"
 #import "AFNumberPickerComponentCell.h"
+#import "AFNumberPickerComponentDelegate.h"
 
 
 static const NSInteger kMaxNumberOfRows = 4096;
@@ -86,7 +87,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 #pragma mark - UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    [self setNewValueAndNotify:[self moduloFromNumber:indexPath.row]];
 }
 
 
@@ -123,6 +124,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated {
     NSIndexPath * indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:UITableViewScrollPositionMiddle];
+    [self setNewValueAndNotify:[self moduloFromNumber:index]];
 }
 
 
@@ -137,6 +139,19 @@ static const NSInteger kMaxNumberOfRows = 4096;
             NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
             [self scrollToIndex:indexPath.row animated:YES];
             break;
+        }
+    }
+}
+
+
+#pragma mark - Change Value Notifications
+
+- (void)setNewValueAndNotify:(NSInteger)newValue {
+    if ( _value != newValue ) {
+        _value = newValue;
+
+        if ( self.delegate && [self.delegate respondsToSelector:@selector(numberPickerComponent:didChangeValue:)] ) {
+            [self.delegate numberPickerComponent:self didChangeValue:self.value];
         }
     }
 }

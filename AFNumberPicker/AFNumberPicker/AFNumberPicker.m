@@ -8,9 +8,10 @@
 
 #import "AFNumberPicker.h"
 #import "AFNumberPickerComponent.h"
+#import "AFNumberPickerComponentDelegate.h"
 
 
-@interface AFNumberPicker ()
+@interface AFNumberPicker () <AFNumberPickerComponentDelegate>
 
 @property (nonatomic, strong) NSArray * pickerComponents;
 
@@ -60,6 +61,8 @@
         for (int i = 0; i < numberOfComponents; i++) {
             CGRect frame = CGRectMake(i * componentWidth, 0, componentWidth, componentHeight);
             AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
+            component.delegate = self;
+            component.tag = i;
             [self addSubview:component];
         }
     }
@@ -70,6 +73,13 @@
     for (UIView * component in self.pickerComponents) {
         [component removeFromSuperview];
     }
+}
+
+
+#pragma mark - AFNumberPickerComponentDelegate methods
+
+- (void)numberPickerComponent:(AFNumberPickerComponent *)component didChangeValue:(NSInteger)value {
+    NSLog(@"%d: %d", component.tag, value);
 }
 
 
