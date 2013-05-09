@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3781801EB6DFE0AE10A41371 /* AFNumberPickerComponentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerComponentDelegate.h; sourceTree = "<group>"; };
 		3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerComponentCell.m; sourceTree = "<group>"; };
 		378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNumberPickerComponent.m; sourceTree = "<group>"; };
 		378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNumberPickerComponent.h; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 				3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */,
 				378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */,
 				37818C3314DD3BF9D8EE94C4 /* AFNumberPickerProtocol.h */,
+				3781801EB6DFE0AE10A41371 /* AFNumberPickerComponentDelegate.h */,
 			);
 			path = AFNumberPicker;
 			sourceTree = "<group>";
