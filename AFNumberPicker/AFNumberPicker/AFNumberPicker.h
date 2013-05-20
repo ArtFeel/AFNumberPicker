@@ -12,6 +12,8 @@
 
 @interface AFNumberPicker : UIView
 
+@property (nonatomic, assign) double value;
+
 @property (nonatomic, assign) id<AFNumberPickerDataSource> dataSource;
 @property (nonatomic, assign) id<AFNumberPickerDelegate> delegate;
 

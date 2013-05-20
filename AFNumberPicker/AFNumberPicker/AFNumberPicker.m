@@ -43,6 +43,14 @@
 }
 
 
+- (void)setValue:(double)value {
+    if ( _value != value ) {
+        _value = value;
+        // TODO: change value in all components
+    }
+}
+
+
 #pragma mark - Private methods
 
 - (void)reloadPicker {
@@ -52,7 +60,8 @@
 
 
 - (void)createComponents {
-    NSInteger numberOfComponents = [self.dataSource numberOfComponentsInNumberPicker:self];
+    NSUInteger numberOfComponents = [self.dataSource numberOfComponentsInNumberPicker:self];
+    NSMutableArray * components = [NSMutableArray arrayWithCapacity:numberOfComponents];
 
     if ( numberOfComponents > 0 ) {
         CGFloat componentHeight = CGRectGetHeight(self.frame);
@@ -60,12 +69,16 @@
 
         for (int i = 0; i < numberOfComponents; i++) {
             CGRect frame = CGRectMake(i * componentWidth, 0, componentWidth, componentHeight);
+
             AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
             component.delegate = self;
-            component.tag = i;
+
+            [components addObject:component];
             [self addSubview:component];
         }
     }
+
+    self.pickerComponents = [components copy];
 }
 
 
@@ -76,10 +89,24 @@
 }
 
 
+#pragma mark - Value calculation
+
+- (void)updateTotalValue {
+    double newValue = 0;
+
+    for (AFNumberPickerComponent * component in self.pickerComponents) {
+        newValue = newValue * 10 + component.value;
+    }
+
+    // Set iVar to prevent updating components
+    _value = newValue;
+}
+
+
 #pragma mark - AFNumberPickerComponentDelegate methods
 
 - (void)numberPickerComponent:(AFNumberPickerComponent *)component didChangeValue:(NSInteger)value {
-    NSLog(@"%d: %d", component.tag, value);
+    [self updateTotalValue];
 }
 
 

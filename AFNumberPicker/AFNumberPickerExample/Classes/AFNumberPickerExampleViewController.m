@@ -35,14 +35,14 @@
 
 #pragma mark - AFNumberPickerDataSource
 
-- (NSInteger)numberOfComponentsInNumberPicker:(AFNumberPicker *)numberPicker {
+- (NSUInteger)numberOfComponentsInNumberPicker:(AFNumberPicker *)numberPicker {
     return 6;
 }
 
 
 #pragma mark - AFNumberPickerDelegate
 
-- (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(CGFloat)value {
+- (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(double)value {
     NSLog(@"New value in delegate: %f", value);
 }
 

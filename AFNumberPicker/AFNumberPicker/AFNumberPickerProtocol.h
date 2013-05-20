@@ -31,7 +31,7 @@
 *
 * @return The number of components (or “columns”) that the number picker should display.
 */
-- (NSInteger)numberOfComponentsInNumberPicker:(AFNumberPicker *)numberPicker;
+- (NSUInteger)numberOfComponentsInNumberPicker:(AFNumberPicker *)numberPicker;
 
 @end
 
@@ -54,6 +54,6 @@
 * @param value New value that user selected
 *
 */
-- (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(CGFloat)value;
+- (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(double)value;
 
 @end
