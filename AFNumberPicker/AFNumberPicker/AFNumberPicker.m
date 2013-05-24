@@ -100,6 +100,8 @@
 
     // Set iVar to prevent updating components
     _value = newValue;
+
+    [self notifyAboutChangingValue];
 }
 
 
@@ -107,6 +109,15 @@
 
 - (void)numberPickerComponent:(AFNumberPickerComponent *)component didChangeValue:(NSInteger)value {
     [self updateTotalValue];
+}
+
+
+#pragma mark - Delegate notifications
+
+- (void)notifyAboutChangingValue {
+    if ( self.delegate && [self.delegate respondsToSelector:@selector(numberPicker:didChangeValue:)] ) {
+        [self.delegate numberPicker:self didChangeValue:self.value];
+    }
 }
 
 

@@ -43,7 +43,7 @@
 #pragma mark - AFNumberPickerDelegate
 
 - (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(double)value {
-    NSLog(@"New value in delegate: %f", value);
+    NSLog(@"Picker value: %f", value);
 }
 
 
