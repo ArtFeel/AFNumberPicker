@@ -13,11 +13,17 @@
 
 @interface AFNumberPicker () <AFNumberPickerComponentDelegate>
 
+@property (nonatomic, strong) UIImageView * backgroundImageView;
+
+@property (nonatomic, strong) NSArray * separators;
 @property (nonatomic, strong) NSArray * pickerComponents;
 
 - (void)reloadPicker;
 - (void)createComponents;
 - (void)removeComponents;
+
+- (void)updateBackgroundImage;
+- (void)updateSeparators;
 
 @end
 
@@ -28,6 +34,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor greenColor];
+        self.contentInset = UIEdgeInsetsZero;
     }
     return self;
 }
@@ -51,6 +58,30 @@
 }
 
 
+- (void)setContentInset:(UIEdgeInsets)contentInset {
+    if ( !UIEdgeInsetsEqualToEdgeInsets(_contentInset, contentInset) ) {
+        _contentInset = contentInset;
+        [self reloadPicker];
+    }
+}
+
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage {
+    if ( ![_backgroundImage isEqual:backgroundImage] ) {
+        _backgroundImage = backgroundImage;
+        [self updateBackgroundImage];
+    }
+}
+
+
+- (void)setSeparatorImage:(UIImage *)separatorImage {
+    if ( ![_separatorImage isEqual:separatorImage] ) {
+        _separatorImage = separatorImage;
+        [self updateSeparators];
+    }
+}
+
+
 #pragma mark - Private methods
 
 - (void)reloadPicker {
@@ -64,11 +95,19 @@
     NSMutableArray * components = [NSMutableArray arrayWithCapacity:numberOfComponents];
 
     if ( numberOfComponents > 0 ) {
-        CGFloat componentHeight = CGRectGetHeight(self.frame);
-        CGFloat componentWidth = floorf(CGRectGetWidth(self.frame) / numberOfComponents);
+        // Insets
+        CGFloat topInset = self.contentInset.top;
+        CGFloat leftInset = self.contentInset.left;
+        CGFloat verticalInsets = topInset + self.contentInset.bottom;
+        CGFloat horizontalInsets = leftInset + self.contentInset.right;
+        CGFloat separatorWidth = self.backgroundImage.size.width;
+
+        // Components size
+        CGFloat componentHeight = floorf(CGRectGetHeight(self.frame) - verticalInsets);
+        CGFloat componentWidth = floorf((CGRectGetWidth(self.frame) - horizontalInsets) / numberOfComponents);
 
         for (int i = 0; i < numberOfComponents; i++) {
-            CGRect frame = CGRectMake(i * componentWidth, 0, componentWidth, componentHeight);
+            CGRect frame = CGRectMake(leftInset + (i * componentWidth), topInset, componentWidth, componentHeight);
 
             AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
             component.delegate = self;
@@ -85,6 +124,24 @@
 - (void)removeComponents {
     for (UIView * component in self.pickerComponents) {
         [component removeFromSuperview];
+    }
+}
+
+
+- (void)updateBackgroundImage {
+    if ( !self.backgroundImageView ) {
+        self.backgroundImageView = [[UIImageView alloc] initWithImage:self.backgroundImage];
+        self.backgroundImageView.frame = self.bounds;
+        [self insertSubview:self.backgroundImageView atIndex:0];
+    } else {
+        self.backgroundImageView.image = self.backgroundImage;
+    }
+}
+
+
+- (void)updateSeparators {
+    for (UIImageView *separatorView in self.separators) {
+        separatorView.image = self.separatorImage;
     }
 }
 

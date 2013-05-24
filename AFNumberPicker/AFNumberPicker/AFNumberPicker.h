@@ -17,4 +17,9 @@
 @property (nonatomic, assign) id<AFNumberPickerDataSource> dataSource;
 @property (nonatomic, assign) id<AFNumberPickerDelegate> delegate;
 
+@property (nonatomic, assign) UIEdgeInsets contentInset;
+
+@property (nonatomic, strong) UIImage * backgroundImage;
+@property (nonatomic, strong) UIImage * separatorImage;
+
 @end
