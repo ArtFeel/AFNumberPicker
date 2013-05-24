@@ -77,7 +77,6 @@ static const NSInteger kMaxNumberOfRows = 4096;
         cell = [[AFNumberPickerComponentCell alloc] initWithFrame:self.frame];
         cell.textLabel.text = [NSString stringWithFormat:@"%d", [self moduloFromNumber:indexPath.row]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.backgroundColor = [UIColor clearColor];
     }
 
     return cell;

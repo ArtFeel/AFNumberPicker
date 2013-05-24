@@ -15,12 +15,15 @@
 
 @property (nonatomic, strong) UIImageView * backgroundImageView;
 
-@property (nonatomic, strong) NSArray * separators;
-@property (nonatomic, strong) NSArray * pickerComponents;
+@property (nonatomic, strong) NSMutableArray * separators;
+@property (nonatomic, strong) NSMutableArray * pickerComponents;
 
 - (void)reloadPicker;
-- (void)createComponents;
-- (void)removeComponents;
+- (void)createUI;
+- (void)removeUI;
+
+- (UIImageView *)newSeparatorWithFrame:(CGRect)frame;
+- (AFNumberPickerComponent *)newComponentWithFrame:(CGRect)frame;
 
 - (void)updateBackgroundImage;
 - (void)updateSeparators;
@@ -85,14 +88,19 @@
 #pragma mark - Private methods
 
 - (void)reloadPicker {
-    [self removeComponents];
-    [self createComponents];
+    // No datasource — no needs to create ui
+    if ( self.dataSource ) {
+        [self removeUI];
+        [self createUI];
+    }
 }
 
 
-- (void)createComponents {
+- (void)createUI {
     NSUInteger numberOfComponents = [self.dataSource numberOfComponentsInNumberPicker:self];
+    NSUInteger numberOfSeparators = numberOfComponents + 1;
     NSMutableArray * components = [NSMutableArray arrayWithCapacity:numberOfComponents];
+    NSMutableArray * separators = [NSMutableArray arrayWithCapacity:numberOfSeparators];
 
     if ( numberOfComponents > 0 ) {
         // Insets
@@ -100,31 +108,67 @@
         CGFloat leftInset = self.contentInset.left;
         CGFloat verticalInsets = topInset + self.contentInset.bottom;
         CGFloat horizontalInsets = leftInset + self.contentInset.right;
-        CGFloat separatorWidth = self.backgroundImage.size.width;
+        CGFloat separatorWidth = self.separatorImage.size.width;
 
         // Components size
-        CGFloat componentHeight = floorf(CGRectGetHeight(self.frame) - verticalInsets);
-        CGFloat componentWidth = floorf((CGRectGetWidth(self.frame) - horizontalInsets) / numberOfComponents);
+        CGFloat selfHeight = CGRectGetHeight(self.frame);
+        CGFloat selfWidth = CGRectGetWidth(self.frame);
+        CGFloat separatorsTotalWidth = numberOfSeparators * separatorWidth;
+        CGFloat componentHeight = floorf(selfHeight - verticalInsets);
+        CGFloat componentWidth = floorf((selfWidth - horizontalInsets - separatorsTotalWidth) / numberOfComponents);
 
+        // Create separators and components
         for (int i = 0; i < numberOfComponents; i++) {
-            CGRect frame = CGRectMake(leftInset + (i * componentWidth), topInset, componentWidth, componentHeight);
+            CGFloat separatorLeft = leftInset + (i * separatorWidth) + (i * componentWidth);
+            CGRect separatorFrame = CGRectMake(separatorLeft, topInset, separatorWidth, componentHeight);
+            UIImageView * separator = [self newSeparatorWithFrame:separatorFrame];
 
-            AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
-            component.delegate = self;
+            [separators addObject:separator];
+            [self addSubview:separator];
+
+            CGRect componentFrame = CGRectMake(separatorLeft + separatorWidth, topInset, componentWidth, componentHeight);
+            AFNumberPickerComponent * component = [self newComponentWithFrame:componentFrame];
 
             [components addObject:component];
             [self addSubview:component];
         }
+
+        // And final separator
+        CGFloat separatorLeft = leftInset + separatorWidth * numberOfComponents + componentWidth * numberOfComponents;
+        CGRect separatorFrame = CGRectMake(separatorLeft, topInset, separatorWidth, componentHeight);
+        UIImageView * separator = [self newSeparatorWithFrame:separatorFrame];
+
+        [separators addObject:separator];
+        [self addSubview:separator];
     }
 
-    self.pickerComponents = [components copy];
+    self.pickerComponents = components;
+    self.separators = separators;
 }
 
 
-- (void)removeComponents {
+- (void)removeUI {
+    for (UIView * separator in self.separators) {
+        [separator removeFromSuperview];
+    }
+    
     for (UIView * component in self.pickerComponents) {
         [component removeFromSuperview];
     }
+}
+
+
+- (UIImageView *)newSeparatorWithFrame:(CGRect)frame {
+    UIImageView * separator = [[UIImageView alloc] initWithImage:self.separatorImage];
+    separator.frame = frame;
+    return separator;
+}
+
+
+- (AFNumberPickerComponent *)newComponentWithFrame:(CGRect)frame {
+    AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
+    component.delegate = self;
+    return component;
 }
 
 

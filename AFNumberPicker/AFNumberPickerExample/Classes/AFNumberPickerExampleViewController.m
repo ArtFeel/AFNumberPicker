@@ -26,8 +26,9 @@
 
     if ( !self.testPicker ) {
         self.testPicker = [[AFNumberPicker alloc] initWithFrame:CGRectMake(20, 20, 280, 65)];
-        self.testPicker.contentInset = UIEdgeInsetsMake(5, 5, 5, 5);
+        self.testPicker.contentInset = UIEdgeInsetsMake(5, 6, 5, 5);
         self.testPicker.backgroundImage = [UIImage imageNamed:@"picker-background"];
+        self.testPicker.separatorImage = [UIImage imageNamed:@"picker-separator"];
         self.testPicker.dataSource = self;
         self.testPicker.delegate = self;
         [self.view addSubview:self.testPicker];
