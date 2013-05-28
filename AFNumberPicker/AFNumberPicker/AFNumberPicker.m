@@ -14,6 +14,7 @@
 @interface AFNumberPicker () <AFNumberPickerComponentDelegate>
 
 @property (nonatomic, strong) UIImageView * backgroundImageView;
+@property (nonatomic, strong) UIImageView * foregroundImageView;
 
 @property (nonatomic, strong) NSMutableArray * separators;
 @property (nonatomic, strong) NSMutableArray * pickerComponents;
@@ -26,6 +27,7 @@
 - (AFNumberPickerComponent *)newComponentWithFrame:(CGRect)frame;
 
 - (void)updateBackgroundImage;
+- (void)updateForegroundImage;
 - (void)updateSeparators;
 
 @end
@@ -73,6 +75,14 @@
     if ( ![_backgroundImage isEqual:backgroundImage] ) {
         _backgroundImage = backgroundImage;
         [self updateBackgroundImage];
+    }
+}
+
+
+- (void)setForegroundImage:(UIImage *)foregroundImage {
+    if ( ![_foregroundImage isEqual:foregroundImage] ) {
+        _foregroundImage = foregroundImage;
+        [self updateForegroundImage];
     }
 }
 
@@ -142,6 +152,9 @@
         [self addSubview:separator];
     }
 
+    // Move foreground view to top
+    [self bringSubviewToFront:self.foregroundImageView];
+
     self.pickerComponents = components;
     self.separators = separators;
 }
@@ -179,6 +192,17 @@
         [self insertSubview:self.backgroundImageView atIndex:0];
     } else {
         self.backgroundImageView.image = self.backgroundImage;
+    }
+}
+
+
+- (void)updateForegroundImage {
+    if ( !self.foregroundImageView ) {
+        self.foregroundImageView = [[UIImageView alloc] initWithImage:self.foregroundImage];
+        self.foregroundImageView.frame = self.bounds;
+        [self addSubview:self.foregroundImageView];
+    } else {
+        self.foregroundImageView.image = self.foregroundImage;
     }
 }
 

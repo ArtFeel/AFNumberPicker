@@ -20,6 +20,7 @@
 @property (nonatomic, assign) UIEdgeInsets contentInset;
 
 @property (nonatomic, strong) UIImage * backgroundImage;
+@property (nonatomic, strong) UIImage * foregroundImage;
 @property (nonatomic, strong) UIImage * separatorImage;
 
 @end
