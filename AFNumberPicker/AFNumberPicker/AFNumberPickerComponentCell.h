@@ -11,6 +11,8 @@
 
 @interface AFNumberPickerComponentCell : UITableViewCell
 
+- (void)updateWithNumber:(NSInteger)number;
+
 + (NSString *)identifier;
 
 @end

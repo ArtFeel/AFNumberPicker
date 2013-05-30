@@ -74,10 +74,11 @@ static const NSInteger kMaxNumberOfRows = 4096;
     AFNumberPickerComponentCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
     if ( !cell ) {
-        cell = [[AFNumberPickerComponentCell alloc] initWithFrame:self.frame];
-        cell.textLabel.text = [NSString stringWithFormat:@"%d", [self moduloFromNumber:indexPath.row]];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[AFNumberPickerComponentCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                  reuseIdentifier:identifier];
     }
+
+    [cell updateWithNumber:[self moduloFromNumber:indexPath.row]];
 
     return cell;
 }

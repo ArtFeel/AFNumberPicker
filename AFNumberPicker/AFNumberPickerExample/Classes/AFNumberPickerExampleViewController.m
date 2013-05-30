@@ -47,7 +47,7 @@
 #pragma mark - AFNumberPickerDelegate
 
 - (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(double)value {
-    NSLog(@"Picker value: %.1f", value);
+    NSLog(@"Picker value: %06.0f", value);
 }
 
 
