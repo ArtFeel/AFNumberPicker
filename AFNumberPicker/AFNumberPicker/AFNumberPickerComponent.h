@@ -18,7 +18,6 @@
 */
 @interface AFNumberPickerComponent : UIView
 
-
 /**
 * Currently selected value.
 */
@@ -30,6 +29,36 @@
 * Implement methods of AFNumberPickerComponentDelegate to respond to new selections of component value.
 */
 @property (nonatomic, assign) id<AFNumberPickerComponentDelegate> delegate;
+
+/**
+* The font of the number.
+*/
+@property (nonatomic, strong) UIFont * numberFont;
+
+/**
+* The color of the number.
+*/
+@property (nonatomic, strong) UIColor * numberColor;
+
+/**
+* The inner shadow color of the text.
+*/
+@property (nonatomic, strong) UIColor * innerShadowColor;
+
+/**
+* The inner shadow offset (measured in points) for the text.
+*/
+@property (nonatomic, assign) CGSize innerShadowOffset;
+
+/**
+* The outer shadow color of the text.
+*/
+@property (nonatomic, strong) UIColor * outerShadowColor;
+
+/**
+* The outer shadow offset (measured in points) for the text.
+*/
+@property (nonatomic, assign) CGSize outerShadowOffset;
 
 
 /**

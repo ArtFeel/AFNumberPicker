@@ -19,7 +19,8 @@
 @property (nonatomic, strong) NSMutableArray * separators;
 @property (nonatomic, strong) NSMutableArray * pickerComponents;
 
-- (void)reloadPicker;
+- (void)setup;
+
 - (void)createUI;
 - (void)removeUI;
 
@@ -38,10 +39,27 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor greenColor];
-        self.contentInset = UIEdgeInsetsZero;
+        [self setup];
     }
     return self;
+}
+
+
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if ( self ) {
+        [self setup];
+    }
+    return self;
+}
+
+
+- (void)setup {
+    self.contentInset = UIEdgeInsetsZero;
+    self.numberFont = [UIFont boldSystemFontOfSize:30];
+    self.numberColor = [UIColor blackColor];
+    self.innerShadowOffset = CGSizeMake(0, -1);
+    self.outerShadowOffset = CGSizeMake(0, 1);
 }
 
 
@@ -59,14 +77,6 @@
     if ( _value != value ) {
         _value = value;
         // TODO: change value in all components
-    }
-}
-
-
-- (void)setContentInset:(UIEdgeInsets)contentInset {
-    if ( !UIEdgeInsetsEqualToEdgeInsets(_contentInset, contentInset) ) {
-        _contentInset = contentInset;
-        [self reloadPicker];
     }
 }
 
@@ -95,7 +105,7 @@
 }
 
 
-#pragma mark - Private methods
+#pragma mark - Public methods
 
 - (void)reloadPicker {
     // No datasource — no needs to create ui
@@ -105,6 +115,8 @@
     }
 }
 
+
+#pragma mark - Private methods
 
 - (void)createUI {
     NSUInteger numberOfComponents = [self.dataSource numberOfComponentsInNumberPicker:self];
@@ -180,6 +192,12 @@
 
 - (AFNumberPickerComponent *)newComponentWithFrame:(CGRect)frame {
     AFNumberPickerComponent * component = [[AFNumberPickerComponent alloc] initWithFrame:frame];
+    component.numberFont = self.numberFont;
+    component.numberColor = self.numberColor;
+    component.innerShadowColor = self.innerShadowColor;
+    component.outerShadowColor = self.outerShadowColor;
+    component.innerShadowOffset = self.innerShadowOffset;
+    component.outerShadowOffset = self.outerShadowOffset;
     component.delegate = self;
     return component;
 }

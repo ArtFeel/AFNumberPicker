@@ -30,6 +30,9 @@
         self.testPicker.backgroundImage = [UIImage imageNamed:@"picker-background"];
         self.testPicker.foregroundImage = [UIImage imageNamed:@"picker-foreground"];
         self.testPicker.separatorImage = [UIImage imageNamed:@"picker-separator"];
+        self.testPicker.numberColor = [UIColor colorWithWhite:0.6 alpha:1];
+        self.testPicker.innerShadowColor = [UIColor colorWithWhite:0 alpha:0.5];
+        self.testPicker.outerShadowColor = [UIColor colorWithWhite:1 alpha:0.55];
         self.testPicker.dataSource = self;
         self.testPicker.delegate = self;
         [self.view addSubview:self.testPicker];

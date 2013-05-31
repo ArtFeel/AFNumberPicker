@@ -23,18 +23,10 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.textLabel.textAlignment = NSTextAlignmentCenter;
 
-        self.textLabel.font = [UIFont boldSystemFontOfSize:30];
-        self.textLabel.textColor = [UIColor colorWithWhite:0.6 alpha:1];
-        self.textLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
-        self.textLabel.shadowOffset = CGSizeMake(0, -1);
-
-        self.shadowLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        self.shadowLabel.textAlignment = NSTextAlignmentCenter;
-        self.shadowLabel.font = self.textLabel.font;
-        self.shadowLabel.textColor = [UIColor clearColor];
-        self.shadowLabel.shadowColor = [UIColor colorWithWhite:1 alpha:0.55];
-        self.shadowLabel.shadowOffset = CGSizeMake(0, 1);
+        self.shadowLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.shadowLabel.backgroundColor = [UIColor clearColor];
+        self.shadowLabel.textAlignment = NSTextAlignmentCenter;
+        self.shadowLabel.textColor = [UIColor clearColor];
         [self.contentView insertSubview:self.shadowLabel belowSubview:self.textLabel];
     }
     return self;
@@ -44,6 +36,57 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.shadowLabel.frame = self.textLabel.frame;
+}
+
+
+#pragma mark - Style properties
+
+- (void)setNumberFont:(UIFont *)numberFont {
+    if ( ![_numberFont isEqual:numberFont] ) {
+        _numberFont = numberFont;
+        self.textLabel.font = numberFont;
+        self.shadowLabel.font = numberFont;
+    }
+}
+
+
+- (void)setNumberColor:(UIColor *)numberColor {
+    if ( ![_numberColor isEqual:numberColor] ) {
+        _numberColor = numberColor;
+        self.textLabel.textColor = numberColor;
+    }
+}
+
+
+- (void)setInnerShadowColor:(UIColor *)innerShadowColor {
+    if ( ![_innerShadowColor isEqual:innerShadowColor] ) {
+        _innerShadowColor = innerShadowColor;
+        self.textLabel.shadowColor = innerShadowColor;
+    }
+}
+
+
+- (void)setInnerShadowOffset:(CGSize)innerShadowOffset {
+    if ( !CGSizeEqualToSize(_innerShadowOffset, innerShadowOffset) ) {
+        _innerShadowOffset = innerShadowOffset;
+        self.textLabel.shadowOffset = innerShadowOffset;
+    }
+}
+
+
+- (void)setOuterShadowColor:(UIColor *)outerShadowColor {
+    if ( ![_outerShadowColor isEqual:outerShadowColor] ) {
+        _outerShadowColor = outerShadowColor;
+        self.shadowLabel.shadowColor = outerShadowColor;
+    }
+}
+
+
+- (void)setOuterShadowOffset:(CGSize)outerShadowOffset {
+    if ( !CGSizeEqualToSize(_outerShadowOffset, outerShadowOffset) ) {
+        _outerShadowOffset = outerShadowOffset;
+        self.shadowLabel.shadowOffset = outerShadowOffset;
+    }
 }
 
 

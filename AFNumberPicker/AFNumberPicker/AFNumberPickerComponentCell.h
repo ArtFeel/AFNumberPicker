@@ -11,6 +11,13 @@
 
 @interface AFNumberPickerComponentCell : UITableViewCell
 
+@property (nonatomic, strong) UIFont  * numberFont;
+@property (nonatomic, strong) UIColor * numberColor;
+@property (nonatomic, strong) UIColor * innerShadowColor;
+@property (nonatomic, strong) UIColor * outerShadowColor;
+@property (nonatomic, assign) CGSize innerShadowOffset;
+@property (nonatomic, assign) CGSize outerShadowOffset;
+
 - (void)updateWithNumber:(NSInteger)number;
 
 + (NSString *)identifier;

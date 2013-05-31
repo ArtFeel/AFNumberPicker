@@ -18,17 +18,20 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 @property (nonatomic, strong) UITableView * tableView;
 
+- (AFNumberPickerComponentCell *)newComponentCellWithIdentifier:(NSString *)identifier;
+
 - (NSInteger)moduloFromNumber:(NSInteger)number;
 - (NSInteger)centeredIndexFromNumber:(NSInteger)number;
 
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated;
 - (void)snapPosition;
 
+- (void)setNewValueAndNotify:(NSInteger)newValue;
+
 @end
 
 
 @implementation AFNumberPickerComponent
-
 
 - (id)initWithFrame:(CGRect)frame {
     return [self initWithFrame:frame andNumber:0];
@@ -74,8 +77,7 @@ static const NSInteger kMaxNumberOfRows = 4096;
     AFNumberPickerComponentCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
     if ( !cell ) {
-        cell = [[AFNumberPickerComponentCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                  reuseIdentifier:identifier];
+        cell = [self newComponentCellWithIdentifier:identifier];
     }
 
     [cell updateWithNumber:[self moduloFromNumber:indexPath.row]];
@@ -106,6 +108,21 @@ static const NSInteger kMaxNumberOfRows = 4096;
 
 
 #pragma mark - Private methods
+
+- (AFNumberPickerComponentCell *)newComponentCellWithIdentifier:(NSString *)identifier {
+    AFNumberPickerComponentCell * cell = [[AFNumberPickerComponentCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                                            reuseIdentifier:identifier];
+
+    cell.numberFont = self.numberFont;
+    cell.numberColor = self.numberColor;
+    cell.innerShadowColor = self.innerShadowColor;
+    cell.outerShadowColor = self.outerShadowColor;
+    cell.innerShadowOffset = self.innerShadowOffset;
+    cell.outerShadowOffset = self.outerShadowOffset;
+
+    return cell;
+}
+
 
 - (NSInteger)moduloFromNumber:(NSInteger)number {
     return number % 10;
