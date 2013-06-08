@@ -70,8 +70,8 @@
 
 
 - (void)setupDecimalPicker {
-    self.decimalPicker.contentInset = UIEdgeInsetsMake(5, 6, 5, 5);
-    self.decimalPicker.backgroundImage = [UIImage imageNamed:@"picker-background"];
+    self.decimalPicker.contentInset = UIEdgeInsetsMake(5, 7, 5, 5);
+    self.decimalPicker.backgroundImage = [UIImage imageNamed:@"picker-decimal-background"];
     self.decimalPicker.foregroundImage = [UIImage imageNamed:@"picker-foreground"];
     self.decimalPicker.separatorImage = [UIImage imageNamed:@"picker-separator"];
     self.decimalPicker.numberColor = [UIColor colorWithWhite:0.6 alpha:1];
