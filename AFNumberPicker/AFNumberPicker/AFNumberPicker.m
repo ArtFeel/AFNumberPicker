@@ -237,9 +237,13 @@
 - (void)updateTotalValue {
     double newValue = 0;
 
+    // Calculate total integral number
     for (AFNumberPickerComponent * component in self.pickerComponents) {
         newValue = newValue * 10 + component.value;
     }
+
+    // Convert to float number
+    newValue = newValue / pow(10, self.decimalNumbersLength);
 
     // Set iVar to prevent updating components
     _value = newValue;

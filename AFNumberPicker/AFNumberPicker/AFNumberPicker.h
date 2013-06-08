@@ -17,6 +17,15 @@
 @property (nonatomic, assign) id<AFNumberPickerDataSource> dataSource;
 @property (nonatomic, assign) id<AFNumberPickerDelegate> delegate;
 
+/**
+* Length of decimal numbers.
+*
+* Amount of decimal digits placed to the right of the decimal point.
+* Example: for number 3,14 decimalNumberLength is equal 2.
+* The default value for this property is 0.
+*/
+@property (nonatomic, assign) NSUInteger decimalNumbersLength;
+
 @property (nonatomic, assign) UIEdgeInsets contentInset;
 
 @property (nonatomic, strong) UIImage * backgroundImage;

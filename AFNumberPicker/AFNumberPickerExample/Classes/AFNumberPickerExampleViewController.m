@@ -26,6 +26,7 @@
 
     if ( !self.testPicker ) {
         self.testPicker = [[AFNumberPicker alloc] initWithFrame:CGRectMake(20, 20, 280, 65)];
+        self.testPicker.decimalNumbersLength = 1;
         self.testPicker.contentInset = UIEdgeInsetsMake(5, 6, 5, 5);
         self.testPicker.backgroundImage = [UIImage imageNamed:@"picker-background"];
         self.testPicker.foregroundImage = [UIImage imageNamed:@"picker-foreground"];
@@ -50,7 +51,7 @@
 #pragma mark - AFNumberPickerDelegate
 
 - (void)numberPicker:(AFNumberPicker *)numberPicker didChangeValue:(double)value {
-    NSLog(@"Picker value: %06.0f", value);
+    NSLog(@"Picker value: %06.1f", value);
 }
 
 
