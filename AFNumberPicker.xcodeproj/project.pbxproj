@@ -20,6 +20,8 @@
 		66220A1C1734226A007DA41A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1B1734226A007DA41A /* Default.png */; };
 		66220A1E1734226A007DA41A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1D1734226A007DA41A /* Default@2x.png */; };
 		66220A201734226A007DA41A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66220A1F1734226A007DA41A /* Default-568h@2x.png */; };
+		66546FEC17632D6B008BF612 /* AFNumberPickerExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66546FEB17632D6B008BF612 /* AFNumberPickerExampleViewController.xib */; };
+		66546FEE176333B8008BF612 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66546FED176333B8008BF612 /* QuartzCore.framework */; };
 		D457741070C08B050A009258 /* picker-separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D45779DAAA4E7D686DA0401F /* picker-separator@2x.png */; };
 		D45774B24C8D9AF751859793 /* picker-foreground.png in Resources */ = {isa = PBXBuildFile; fileRef = D45775213C6A4116D15048A7 /* picker-foreground.png */; };
 		D4577AA1688C06A913AE1F1C /* picker-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D45770BDDD1B0D7738B5AD71 /* picker-background@2x.png */; };
@@ -52,6 +54,8 @@
 		66220A1B1734226A007DA41A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		66220A1D1734226A007DA41A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		66220A1F1734226A007DA41A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		66546FEB17632D6B008BF612 /* AFNumberPickerExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFNumberPickerExampleViewController.xib; sourceTree = "<group>"; };
+		66546FED176333B8008BF612 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D45770BDDD1B0D7738B5AD71 /* picker-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picker-background@2x.png"; sourceTree = "<group>"; };
 		D4577135C3E2671B563C618D /* picker-separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picker-separator.png"; sourceTree = "<group>"; };
 		D45775213C6A4116D15048A7 /* picker-foreground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picker-foreground.png"; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66546FEE176333B8008BF612 /* QuartzCore.framework in Frameworks */,
 				66220A0A1734226A007DA41A /* UIKit.framework in Frameworks */,
 				66220A0C1734226A007DA41A /* Foundation.framework in Frameworks */,
 				66220A0E1734226A007DA41A /* CoreGraphics.framework in Frameworks */,
@@ -77,13 +82,13 @@
 		3781855EE161D22EDF45FC5A /* AFNumberPicker */ = {
 			isa = PBXGroup;
 			children = (
-				3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */,
 				378182A78134C28BECA5B307 /* AFNumberPicker.h */,
-				378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */,
-				378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */,
-				3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */,
-				378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */,
+				3781890AB9CCF05F84F0B6EA /* AFNumberPicker.m */,
 				37818C3314DD3BF9D8EE94C4 /* AFNumberPickerProtocol.h */,
+				378181EDF63FB009C61E23A4 /* AFNumberPickerComponent.h */,
+				378181C74F1DBD267C929957 /* AFNumberPickerComponent.m */,
+				378182822EC61E94B38FBB35 /* AFNumberPickerComponentCell.h */,
+				3781804969566510434B2A13 /* AFNumberPickerComponentCell.m */,
 				3781801EB6DFE0AE10A41371 /* AFNumberPickerComponentDelegate.h */,
 			);
 			path = AFNumberPicker;
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				37818CF30D671BF325BD776E /* Classes */,
+				66546FEA17632CA9008BF612 /* Interface */,
 				37818E7EFFA51C35A7668D74 /* Images */,
 			);
 			path = AFNumberPickerExample;
@@ -101,9 +107,9 @@
 		37818CF30D671BF325BD776E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				37818A5B596DC0907BA5D423 /* AFNumberPickerExampleViewController.h */,
-				37818246400089FAA46DE949 /* AFAppDelegate.m */,
 				37818AE6ADBF8E4E9284ED99 /* AFAppDelegate.h */,
+				37818246400089FAA46DE949 /* AFAppDelegate.m */,
+				37818A5B596DC0907BA5D423 /* AFNumberPickerExampleViewController.h */,
 				37818EBC3329AFE3495BA273 /* AFNumberPickerExampleViewController.m */,
 			);
 			path = Classes;
@@ -126,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				66220A0F1734226A007DA41A /* AFNumberPicker */,
+				66220A101734226A007DA41A /* Supporting Files */,
 				66220A081734226A007DA41A /* Frameworks */,
 				66220A071734226A007DA41A /* Products */,
 			);
@@ -142,6 +149,7 @@
 		66220A081734226A007DA41A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66546FED176333B8008BF612 /* QuartzCore.framework */,
 				66220A091734226A007DA41A /* UIKit.framework */,
 				66220A0B1734226A007DA41A /* Foundation.framework */,
 				66220A0D1734226A007DA41A /* CoreGraphics.framework */,
@@ -152,7 +160,6 @@
 		66220A0F1734226A007DA41A /* AFNumberPicker */ = {
 			isa = PBXGroup;
 			children = (
-				66220A101734226A007DA41A /* Supporting Files */,
 				3781855EE161D22EDF45FC5A /* AFNumberPicker */,
 				37818B8444979F15D787EE05 /* AFNumberPickerExample */,
 			);
@@ -171,6 +178,15 @@
 				66220A1F1734226A007DA41A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = AFNumberPicker;
+			sourceTree = "<group>";
+		};
+		66546FEA17632CA9008BF612 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				66546FEB17632D6B008BF612 /* AFNumberPickerExampleViewController.xib */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +251,7 @@
 				D457741070C08B050A009258 /* picker-separator@2x.png in Resources */,
 				D45774B24C8D9AF751859793 /* picker-foreground.png in Resources */,
 				D4577EE548D3B53133661FAF /* picker-foreground@2x.png in Resources */,
+				66546FEC17632D6B008BF612 /* AFNumberPickerExampleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +384,7 @@
 				66220A251734226A007DA41A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
